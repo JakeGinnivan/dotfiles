@@ -1,3 +1,5 @@
+node_version=12
+
 # Install some stuff before others!
 important_casks=(
     dropbox
@@ -13,7 +15,7 @@ brews=(
     grep
     httpie
     "imagemagick --with-webp"
-    node@12
+    "node@${node_version}"
     postgres
     python3
     ruby
@@ -213,11 +215,14 @@ install 'mas install' "${app_store[@]}"
 brew tap homebrew/cask-fonts
 install 'brew cask install' "${fonts[@]}"
 
+# Needed for lastpass alfred workflow
 sudo cpan install Capture::Tiny
+curl -o- -L https://yarnpkg.com/install.sh | bash
 
 # install 'add_alfred_workflow' "${alfred_workflows[@]}"
 
 defaultbrowser firefox
+echo "export PATH=\"/usr/local/opt/node@${node_version}/bin:$PATH\"" >> ~/.zshrc
 
 echo "Update packages"
 pip3 install --upgrade pip setuptools wheel
@@ -225,6 +230,7 @@ m update install all
 
 echo "Install software from App Store"
 mas list
+
 
 cat ~/.ssh/id_rsa.pub | pbcopy
 echo "Please add this public key to Github\n"
