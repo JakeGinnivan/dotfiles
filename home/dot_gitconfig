@@ -1,0 +1,147 @@
+[user]
+name=Jake Ginnivan
+email=jake@ginnivan.net
+signingkey=ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhSmC1I9vfyZ5IW6nrc8Dk+wZBFTXlkJfPcnCtsqmFJ
+
+[gpg]
+format=ssh
+
+[gpg "ssh"]
+program="/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+gpgsign=true
+verbose=true
+
+[column]
+ui=auto
+
+[branch]
+sort=-committerdate
+autoSetupRebase=always
+
+[tag]
+sort=version:refname
+
+[init]
+defaultBranch=main
+
+[diff]
+algorithm=histogram
+colorMoved=plain
+mnemonicPrefix=true
+renames=true
+
+[push]
+default=simple
+autoSetupRemote=true
+followTags=true
+
+[fetch]
+prune=true
+pruneTags=true
+all=true
+
+# why the hell not?
+[help]
+autocorrect=prompt
+
+[rerere]
+enabled=true
+autoupdate=true
+
+[rebase]
+autoSquash=true
+autoStash=true
+updateRefs=true
+
+[core]
+editor=nvim
+fsmonitor=true
+untrackedCache=true
+
+[diff]
+# Detect copies as well as renames
+renames=copies
+guitool=Kaleidoscope
+tool=Kaleidoscope
+
+[merge]
+conflictstyle=zdiff3
+# Include summaries of merged commits in newly created merge commit messages
+log=false
+ff=false
+tool=Kaleidoscope
+guitool=Kaleidoscope
+
+[pull]
+rebase=true
+
+[help]
+# Automatically correct and execute mistyped commands
+autocorrect=1
+
+[difftool "Kaleidoscope"]
+cmd=ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+trustExitCode=true
+
+[difftool]
+keepBackup=false
+prompt=false
+
+[mergetool "Kaleidoscope"]
+cmd=ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+trustExitCode=true
+
+[mergetool]
+keepBackup=false
+prompt=false
+
+[alias]
+# Common shortcuts
+l=log --pretty=oneline -n 20 --graph --abbrev-commit
+s=status -s
+d="!git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+di="!d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+p=pull --recurse-submodules
+c=clone --recursive
+ca="!git add -A && git commit -av"
+
+# Branch/checkout helpers
+go="!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+# AI worktree: create sibling directory with next available number
+create-worktree="!bash ~/.local/bin/git-wt-ai.sh"
+
+tags=tag -l
+branches=branch -a
+remotes=remote -v
+aliases=config --get-regexp alias
+
+amend=commit --amend --reuse-message=HEAD
+
+# Credit an author on the latest commit
+credit="!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+
+# Interactive rebase for the last N commits
+reb="!r() { git rebase -i HEAD~$1; }; r"
+
+# Retag latest commit
+retag="!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
+
+# Find branches containing a commit
+fb="!f() { git branch -a --contains $1; }; f"
+lb="!f() { git for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate)' refs/heads/; }; f"
+
+# Find tags containing a commit
+ft="!f() { git describe --always --contains $1; }; f"
+
+# Find commits by source code or message
+fc="!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+fm="!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+# Delete merged branches
+dm="!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+contributors=shortlog --summary --numbered

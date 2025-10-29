@@ -1,0 +1,10 @@
+{
+    "editor.formatOnSave": true,
+    "files.associations": {
+        ".gitconfig": "ini",
+        "dot_gitconfig": "ini",
+        "*.gitconfig": "ini",
+        ".ssh/config": "plaintext",
+        "*.ssh_config": "plaintext"
+    }
+}

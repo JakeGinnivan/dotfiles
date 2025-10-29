@@ -1,0 +1,9 @@
+# ~/.zshenv - Runs for ALL shells (interactive and non-interactive)
+# Keep this minimal - only PATH and critical environment variables
+# This ensures tools like VSCode can find node, npm, etc. when restored by macOS
+
+# Add local binaries
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
+
+# Homebrew (critical for finding node, npm, and all brew-installed tools)
+eval "$(/opt/homebrew/bin/brew shellenv)"

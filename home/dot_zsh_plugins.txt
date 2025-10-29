@@ -1,0 +1,20 @@
+# pick only the plugins you want and remove the rest
+mattmc3/zephyr path:plugins/color
+mattmc3/zephyr path:plugins/completion
+mattmc3/zephyr path:plugins/compstyle
+mattmc3/zephyr path:plugins/directory
+# Disable as it modifies WORDCHARS which breaks some functionality
+# mattmc3/zephyr path:plugins/editor
+mattmc3/zephyr path:plugins/environment
+mattmc3/zephyr path:plugins/history
+mattmc3/zephyr path:plugins/homebrew
+mattmc3/zephyr path:plugins/macos
+mattmc3/zephyr path:plugins/utility
+
+jscutlery/nx-completion
+MichaelAquilina/zsh-you-should-use
+
+getantidote/use-omz
+ohmyzsh/ohmyzsh path:plugins/azure
+ohmyzsh/ohmyzsh path:plugins/eza
+ohmyzsh/ohmyzsh path:plugins/git

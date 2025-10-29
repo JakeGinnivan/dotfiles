@@ -1,0 +1,21 @@
+{
+    "alwaysThinkingEnabled": false,
+    "sandbox": {
+        "enabled": true,
+        "autoAllowBashIfSandboxed": true
+    },
+    "hooks": {
+        "PreCompact": [
+            {
+                "matcher": "*",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "$HOME/.local/bin/archive-claude-conversation.sh",
+                        "timeout": 30
+                    }
+                ]
+            }
+        ]
+    }
+}

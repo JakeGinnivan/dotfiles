@@ -1,0 +1,63 @@
+packages:
+    darwin:
+        taps:
+            - hashicorp/tap
+            - sst/tap
+            - valkyrie00/bbrew
+        brews:
+            - act
+            - antidote
+            - azure-cli
+            - bat
+            - chezmoi
+            - dua-cli
+            - dust
+            - eza
+            - fd
+            - fish
+            - fjira
+            - fnm
+            - fzf
+            - gh
+            - ghostscript
+            - git
+            - git-delta
+            - git-lfs
+            - block-goose-cli
+            - handbrake
+            - httpie
+            - imagemagick
+            - jq
+            - lazygit
+            - lsd
+            - mcfly
+            - neovim
+            - node
+            - nx
+            - pgcli
+            - ripgrep
+            - runme
+            - starship
+            - television
+            - tflint
+            - trivy
+            - tldr
+            - watchman
+            - zoxide
+            - hashicorp/tap/terraform
+            - sst/tap/opencode
+            - valkyrie00/bbrew/bbrew
+        casks:
+            - 1password-cli
+            - alt-tab
+            - codex
+            - font-dejavu-sans-mono-nerd-font
+            - font-fira-mono-nerd-font
+            - font-hack-nerd-font
+            - font-jetbrains-mono-nerd-font
+            - ghostty
+            - keyclu
+            - orbstack
+            - pearcleaner
+            - raycast
+            - stats

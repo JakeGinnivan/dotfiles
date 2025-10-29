@@ -1,0 +1,32 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+# add_newline = true
+
+# [azure]
+# disabled = false
+# format = 'on [$symbol($subscription)]($style) '
+# symbol = '󰠅 '
+# style = 'blue bold'
+
+# [nix_shell]
+# symbol = " "
+
+# [nodejs]
+# symbol = " "
+
+# [package]
+# symbol = "󰏗 "
+
+# [python]
+# symbol = " "
+
+# [ruby]
+# symbol = " "
+
+# [rust]
+# symbol = "󱘗 "
+
+[dotnet]
+disabled = true

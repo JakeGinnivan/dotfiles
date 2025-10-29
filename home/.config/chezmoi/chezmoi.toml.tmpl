@@ -1,0 +1,26 @@
+[hooks.read-source-state.pre]
+    command = ".local/share/chezmoi/.install-1password.sh"
+
+[edit]
+    command = "code"
+    args = ["--wait"]
+
+[merge]
+command = "ksdiff"
+args = [
+    "--merge",
+    "--output",
+    "{{ .Destination }}",
+    "--base",
+    "{{ .Source }}",
+    "{{ .Destination }}",
+    "{{ .Target }}",
+]
+
+[diff]
+command = "ksdiff"
+args = [
+    "--diff",
+    "{{ .Destination }}",
+    "{{ .Target }}",
+]

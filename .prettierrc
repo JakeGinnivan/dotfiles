@@ -1,0 +1,14 @@
+{
+    "plugins": [
+        "prettier-plugin-toml",
+        "prettier-plugin-ini"
+    ],
+    "overrides": [
+        {
+            "files": "dot_gitconfig",
+            "options": {
+                "parser": "ini"
+            }
+        }
+    ]
+}

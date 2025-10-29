@@ -1,0 +1,53 @@
+# Shell Tool Tips
+# Format: One tip per line. Lines starting with # are ignored.
+
+💡 Use 'rg <pattern>' instead of grep - it's recursive, faster, and respects .gitignore
+💡 Use 'fd <name>' instead of find - simpler syntax: fd '*.js' vs find . -name '*.js'
+💡 Use 'z <partial-path>' to jump to frequently used directories (zoxide)
+💡 Use 'bat <file>' instead of cat - syntax highlighting and git integration built-in
+💡 Use 'eza -la' or 'eza --tree' for beautiful directory listings (try alias 'll')
+💡 Use Ctrl+R for intelligent history search with mcfly - learns from your patterns
+💡 Use 'delta' for beautiful git diffs - already configured in your .gitconfig
+💡 Use 'tldr <command>' for practical examples instead of man pages
+💡 Use 'lazygit' for a terminal UI to manage git repos - way faster than CLI commands
+💡 Use 'gh pr create' to create GitHub PRs from the terminal
+💡 Use 'gh pr checkout <number>' to checkout a PR locally
+💡 Use 'fzf' to fuzzy find anything - try 'vim $(fzf)' to open files interactively
+💡 Use 'httpie' instead of curl - simpler syntax: 'http GET example.com/api'
+💡 Use 'jq' to parse JSON in the terminal: 'curl api.example.com | jq .data'
+💡 Use 'fnm use' to switch Node versions (or 'fnm install <version>')
+💡 Use 'bun run' instead of npm/pnpm for faster script execution
+💡 Use 'bun install' for significantly faster package installation
+💡 Use 'act' to test GitHub Actions locally before pushing
+💡 Use 'dust' instead of du for visual disk usage analysis
+💡 Use 'dua' for interactive disk space exploration
+💡 Use 'nx graph' to visualize your monorepo dependencies
+💡 Use 'git go <branch>' to checkout or create a branch in one command
+💡 Use 'git amend' to quickly amend the last commit (alias in your .gitconfig)
+💡 Use 'git s' for short git status (alias in your .gitconfig)
+💡 Use 'git l' for a pretty oneline log graph (alias in your .gitconfig)
+💡 Use 'watchman-wait' to watch files for changes in build scripts
+💡 Use 'television' for a TUI to browse files, git repos, and more
+💡 Your pnpm aliases: pi (install), pa (add), pad (add -D), pr (run), prd (run dev)
+💡 Quick pnpm: 'p' is aliased to pnpm - use 'p i', 'p add', etc.
+💡 Use 'eza --icons --git' to see git status next to files
+💡 Use 'rg -i <pattern>' for case-insensitive search
+💡 Use 'fd -e js -e ts' to find only .js and .ts files
+💡 Use 'bat --diff' to compare files with syntax highlighting
+💡 Use 'lazygit' and press '?' for keyboard shortcuts cheat sheet
+💡 Use 'gh repo view --web' to open current repo in browser
+💡 Use 'fnm default <version>' to set a global default Node version
+💡 Use 'bun create' to scaffold projects - faster than npm create
+💡 Use 'rg --type js <pattern>' to search only JavaScript files
+💡 Use 'fd --hidden' to include hidden files in search
+💡 Use 'op item list' to browse your 1Password items from the terminal
+💡 Use 'op run -- <command>' to inject secrets from 1Password into commands
+💡 Use 'chezmoi diff' before 'chezmoi apply' to preview changes
+💡 Use 'chezmoi edit <file>' to edit managed dotfiles in VS Code
+💡 Your git rerere is enabled - it remembers merge conflict resolutions
+💡 Your git autoStash is on - rebase operations auto-stash uncommitted changes
+💡 Use 'gh pr list' to see all open PRs, or 'gh pr list --author @me' for yours
+💡 Use 'git dm' to delete all merged branches (alias in your .gitconfig)
+💡 Use 'git fb <commit>' to find which branches contain a commit
+💡 Use 'starship explain' to understand what your prompt is showing
+💡 Use 'zoxide query -l' to see your most frequently used directories
