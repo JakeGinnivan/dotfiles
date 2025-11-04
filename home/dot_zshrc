@@ -1,16 +1,22 @@
 # Custom word characters for better word navigation
 export WORDCHARS='*?[]~=/&;!#$%^(){}<>'
 
+# Disable Oh My Zsh auto-update prompts (we use antidote to manage plugins)
+export DISABLE_AUTO_UPDATE="true"
+
 # Zephyr plugin configuration
 zstyle ':zephyr:plugin:directory:alias' 'skip' 'yes'
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 antidote load
 source ~/.zsh_plugins.zsh
 
-eval "$(op completion zsh)"
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
-eval "$(mcfly init zsh)"
+# Skip shell initialization in Claude Code (sandbox restrictions)
+if [[ -z "$CLAUDE_CODE" ]]; then
+  eval "$(op completion zsh)"
+  eval "$(zoxide init zsh)"
+  eval "$(starship init zsh)"
+  eval "$(mcfly init zsh)"
+fi
 
 # pnpm aliases (using corepack)
 alias p="pnpm"
