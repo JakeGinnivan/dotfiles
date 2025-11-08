@@ -51,3 +51,24 @@ function show_random_tip() {
 
 # Show tip on new interactive shells
 show_random_tip
+
+# Auto-update terminal title in git directories
+function update_terminal_title() {
+  # Check if we're in a git repository
+  if git rev-parse --is-inside-work-tree &>/dev/null; then
+    local folder_name="${PWD:t}"  # Get basename of current directory
+    local git_branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+
+    if [[ -n "$git_branch" ]]; then
+      # Set terminal title using OSC escape sequence
+      print -Pn "\e]0;${folder_name} - ${git_branch}\a"
+    fi
+  fi
+}
+
+# Run on directory change
+autoload -Uz add-zsh-hook
+add-zsh-hook chpwd update_terminal_title
+
+# Set title for current directory on shell startup
+update_terminal_title
