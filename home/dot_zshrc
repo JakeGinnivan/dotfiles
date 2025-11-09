@@ -52,6 +52,10 @@ function show_random_tip() {
 # Show tip on new interactive shells
 show_random_tip
 
+function stitle() {
+  echo -en "\033]0;$@\007"
+}
+
 # Auto-update terminal title in git directories
 function update_terminal_title() {
   # Check if we're in a git repository
@@ -61,7 +65,7 @@ function update_terminal_title() {
 
     if [[ -n "$git_branch" ]]; then
       # Set terminal title using OSC escape sequence
-      print -Pn "\e]0;${folder_name} - ${git_branch}\a"
+      stitle "${folder_name} - ${git_branch}"
     fi
   fi
 }

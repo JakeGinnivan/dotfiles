@@ -67,11 +67,18 @@ background-opacity = 0.85
 
 window-padding-x = 16
 window-padding-y = 16
-window-padding-balance = false # centers text when window doesn't match cell grid
+# centers text when window doesn't match cell grid
+window-padding-balance = false
 window-padding-color = background
 
-scrollback-limit = 25000000 # 25mb
+# 25mb
+scrollback-limit = 25000000
 
-clipboard-paste-protection = false # warns about dangerous pastes (e.g., commands with newlines)
-copy-on-select = clipboard # auto-copy selection to clipboard
+# warns about dangerous pastes (e.g., commands with newlines)
+clipboard-paste-protection = false
+# auto-copy selection to clipboard
+copy-on-select = clipboard
 
+# Disable Ghostty built-in tab title shell integration
+# https://ghostty.org/docs/config/reference#shell-integration-features
+shell-integration-features = no-title
