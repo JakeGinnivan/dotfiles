@@ -3,6 +3,7 @@ export WORDCHARS='*?[]~=/&;!#$%^(){}<>'
 
 # Disable Oh My Zsh auto-update prompts (we use antidote to manage plugins)
 export DISABLE_AUTO_UPDATE="true"
+export CLAUDE_CODE_DISABLE_TERMINAL_TITLE="true"
 
 # Zephyr plugin configuration
 zstyle ':zephyr:plugin:directory:alias' 'skip' 'yes'
@@ -32,7 +33,7 @@ alias pu="pnpm update"
 alias prm="pnpm remove"
 
 # fnm - Fast Node Manager
-eval "$(fnm env --use-on-cd)"
+eval "$(fnm env --use-on-cd --corepack-enabled --shell zsh)"
 
 # Random tool tip on shell startup
 function show_random_tip() {
@@ -70,9 +71,10 @@ function update_terminal_title() {
   fi
 }
 
-# Run on directory change
+# Run on directory change and after every command
 autoload -Uz add-zsh-hook
 add-zsh-hook chpwd update_terminal_title
+add-zsh-hook precmd update_terminal_title
 
 # Set title for current directory on shell startup
 update_terminal_title

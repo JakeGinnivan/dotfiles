@@ -1,6 +1,5 @@
 {
     "alwaysThinkingEnabled": false,
-    "setTerminalTitle": false,
     "sandbox": {
         "enabled": true,
         "autoAllowBashIfSandboxed": true
