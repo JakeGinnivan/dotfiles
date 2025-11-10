@@ -9,6 +9,7 @@ packages:
             - antidote
             - azure-cli
             - bat
+            - block-goose-cli
             - chezmoi
             - dua-cli
             - dust
@@ -23,12 +24,13 @@ packages:
             - git
             - git-delta
             - git-lfs
-            - block-goose-cli
             - handbrake
+            - hashicorp/tap/terraform
             - httpie
             - imagemagick
             - jq
             - lazygit
+            - libpq
             - lsd
             - mcfly
             - neovim
@@ -37,16 +39,15 @@ packages:
             - pgcli
             - ripgrep
             - runme
+            - sst/tap/opencode
             - starship
             - television
             - tflint
-            - trivy
             - tldr
+            - trivy
+            - valkyrie00/bbrew/bbrew
             - watchman
             - zoxide
-            - hashicorp/tap/terraform
-            - sst/tap/opencode
-            - valkyrie00/bbrew/bbrew
         casks:
             - 1password-cli
             - alt-tab

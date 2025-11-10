@@ -82,3 +82,5 @@ copy-on-select = clipboard
 # Disable Ghostty built-in tab title shell integration
 # https://ghostty.org/docs/config/reference#shell-integration-features
 shell-integration-features = no-title
+window-save-state = always
+confirm-close-surface = false
