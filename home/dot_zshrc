@@ -1,6 +1,8 @@
 # Custom word characters for better word navigation
 export WORDCHARS='*?[]~=/&;!#$%^(){}<>'
 
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
 # Disable Oh My Zsh auto-update prompts (we use antidote to manage plugins)
 export DISABLE_AUTO_UPDATE="true"
 export CLAUDE_CODE_DISABLE_TERMINAL_TITLE="true"
