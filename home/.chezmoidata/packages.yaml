@@ -28,6 +28,7 @@ packages:
             - hashicorp/tap/terraform
             - httpie
             - imagemagick
+            - jj
             - jq
             - lazygit
             - libpq

@@ -1,0 +1,20 @@
+{
+    "mcpServers": {
+        "context-7": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@upstash/context7-mcp@latest",
+                "--api-key",
+                "{{ onepasswordRead "op://Private/Context7/credential" }}"
+            ]
+        },
+        "atlassian": {
+            "type": "sse",
+            "url": "https://mcp.atlassian.com/v1/sse"
+        },
+    },
+    "preferences": {
+        "quickEntryDictationShortcut": "capslock"
+    }
+}
