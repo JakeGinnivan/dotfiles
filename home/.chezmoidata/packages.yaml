@@ -62,4 +62,5 @@ packages:
             - orbstack
             - pearcleaner
             - raycast
+            - soundsource
             - stats
