@@ -6,4 +6,11 @@
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 
 # Homebrew (critical for finding node, npm, and all brew-installed tools)
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# Skip full shellenv in Claude Code sandbox (it calls /bin/ps which is blocked)
+if [[ -n "$CLAUDE_CODE" ]]; then
+  # Minimal Homebrew PATH setup for sandboxed environments
+  export HOMEBREW_PREFIX="/opt/homebrew"
+  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+else
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
